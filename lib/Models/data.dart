@@ -1,10 +1,14 @@
 import 'dart:convert' as convert;
 import 'package:covid/widgets/flipCard.dart';
+import 'package:covid/widgets/header.dart';
+
 import 'package:covid/widgets/searchBar.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:http/http.dart' as http;
+
+import '../Constants.dart';
 
 Future fetchData(String location) async {
   var newCases, activeCases, recoveredCases, deathes;
@@ -60,27 +64,61 @@ class CardFutureBuilder extends StatelessWidget {
         future: fetchData(country),
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           if (snapshot.hasData) {
-            return GridView.count(
-                primary: false,
-                padding: EdgeInsets.only(
-                    top: width * .08,
-                    left: width * .08,
-                    right: width * .08,
-                    bottom: height * .05),
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-                crossAxisCount: 2,
-                children: [
-                  FlippingCard(
-                      height: height,
-                      width: width,
-                      front: 'activeCases',
-                      back: snapshot.data['activeCases'].toString()),
-                ]);
+            return Column(
+              children: [
+                MyHeader(
+                  image: "assets/images/homeScreen.png",
+                  textTop: "Get to know",
+                  textBottom: "About Covid-19.",
+                ),
+                Container(
+                  height: height * .52,
+                  width: width,
+                  child: GridView.count(
+                      primary: false,
+                      padding: EdgeInsets.only(
+                          top: height * .03,
+                          left: width * .03,
+                          right: width * .03,
+                          bottom: height * .05),
+                      crossAxisSpacing: 5,
+                      mainAxisSpacing: 5,
+                      crossAxisCount: 2,
+                      children: [
+                        FlippingCard(
+                          height: height,
+                          width: width,
+                          front: 'New Cases',
+                          back: snapshot.data['newCases'].toString(),
+                        ),
+                        FlippingCard(
+                          height: height,
+                          width: width,
+                          front: 'Total Cases',
+                          back: snapshot.data['activeCases'].toString(),
+                        ),
+                        FlippingCard(
+                          height: height,
+                          width: width,
+                          front: 'Recovered Cases',
+                          back: snapshot.data['recoveredCases'].toString(),
+                        ),
+                        FlippingCard(
+                          height: height,
+                          width: width,
+                          front: 'Total deathes',
+                          back: snapshot.data['deathes'].toString(),
+                        ),
+                      ]),
+                ),
+              ],
+            );
           } else {
             return Center(
-              child: CircularProgressIndicator(),
-            );
+                child: CircularProgressIndicator(
+              backgroundColor: secColor,
+              valueColor: new AlwaysStoppedAnimation<Color>(bgColor),
+            ));
           }
         },
       ),

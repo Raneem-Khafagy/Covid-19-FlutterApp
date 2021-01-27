@@ -16,12 +16,26 @@ class FlippingCard extends StatelessWidget {
       direction: FlipDirection.HORIZONTAL, // default
       front: Container(
           decoration: BoxDecoration(
-              color: bgColor, borderRadius: BorderRadius.circular(10)),
-          child: Center(child: Text(front))),
+              color: secColor, borderRadius: BorderRadius.circular(10)),
+          child: Center(
+              child: Text(
+            front,
+            style: TextStyle(
+              fontSize: 18,
+              color: wColor,
+            ),
+          ))),
       back: Container(
           decoration: BoxDecoration(
-              color: bgColor, borderRadius: BorderRadius.circular(10)),
-          child: Text(back)),
+              color: secColor, borderRadius: BorderRadius.circular(10)),
+          child: Center(
+              child: Text(
+            back,
+            style: TextStyle(
+              fontSize: 18,
+              color: wColor,
+            ),
+          ))),
     );
   }
 }
