@@ -16,20 +16,8 @@ class EnterScreen extends StatelessWidget {
         children: <Widget>[
           Positioned(
             width: width,
-            height: height * .3,
-            top: height * 0,
-            child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/images/map.png"),
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            width: width,
-            height: height * .6,
-            top: height * 0.22,
+            height: height * .5,
+            top: height * 0.2,
             child: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
@@ -41,8 +29,7 @@ class EnterScreen extends StatelessWidget {
           Positioned(
             width: width * .3,
             height: height * .08,
-            top: height * 0.85,
-            //right: width * .3,
+            top: height * 0.73,
             left: width * .35,
             child: GestureDetector(
               onTap: () {

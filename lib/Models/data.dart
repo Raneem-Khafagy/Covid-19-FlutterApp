@@ -1,5 +1,5 @@
 import 'dart:convert' as convert;
-import 'package:covid/Views/Screens/EnterScreen.dart';
+
 import 'package:covid/widgets/flipCard.dart';
 import 'package:covid/widgets/header.dart';
 
@@ -10,7 +10,7 @@ import 'package:http/http.dart' as http;
 import '../Constants.dart';
 
 Future fetchData(String location) async {
-  var newCases, activeCases, recoveredCases, deathes;
+  var newCases, activeCases, recoveredCases, deathes, day;
 
   String url = "https://covid-193.p.rapidapi.com/statistics";
 
@@ -31,11 +31,13 @@ Future fetchData(String location) async {
         activeCases = countryDataList[i]['cases']['active'];
         recoveredCases = countryDataList[i]['cases']['recovered'];
         deathes = countryDataList[i]['deaths']['total'];
+        day = countryDataList[i]['day'];
         Map flippedCard = {
           'newCases': newCases,
           'activeCases': activeCases,
           'recoveredCases': recoveredCases,
-          'deathes': deathes
+          'deathes': deathes,
+          'day': day
         };
         return flippedCard;
         //print(countryDataList[i]);
@@ -67,19 +69,20 @@ class CardFutureBuilder extends StatelessWidget {
               children: [
                 MyHeader(
                   image: "assets/images/homeScreen.png",
-                  textTop: "Get to know",
-                  textBottom: "About Covid-19.",
+                  textTop: "Case Update",
+                  textBottom: snapshot.data['day'].toString(),
                 ),
                 Container(
-                  height: height * .52,
+                  height: height * .55,
                   width: width,
                   child: GridView.count(
                       primary: false,
                       padding: EdgeInsets.only(
-                          top: height * .03,
-                          left: width * .03,
-                          right: width * .03,
-                          bottom: height * .05),
+                        //top: height * .03,
+                        left: width * .03,
+                        right: width * .03,
+                        bottom: height * .01,
+                      ),
                       crossAxisSpacing: 5,
                       mainAxisSpacing: 5,
                       crossAxisCount: 2,

@@ -19,7 +19,7 @@ class CovidCard extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     return Container(
       margin: EdgeInsets.fromLTRB(
-          height * .009, width * .05, height * .009, width * .03),
+          height * .009, width * .09, height * .009, width * .09),
       child: SizedBox(
         height: 156,
         child: Stack(
@@ -35,7 +35,7 @@ class CovidCard extends StatelessWidget {
                   BoxShadow(
                     offset: Offset(0, 8),
                     blurRadius: 24,
-                    color: activeShadowColor,
+                    color: shadowColor,
                   ),
                 ],
               ),

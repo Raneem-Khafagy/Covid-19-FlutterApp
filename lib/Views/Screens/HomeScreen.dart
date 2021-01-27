@@ -1,7 +1,5 @@
-import 'package:covid/Models/data.dart';
-import 'package:covid/widgets/circularIndicator.dart';
 import 'package:covid/widgets/covidCard.dart';
-import 'package:covid/widgets/flipCard.dart';
+
 import 'package:covid/widgets/searchBar.dart';
 import 'package:flutter/material.dart';
 import 'package:covid/widgets/header.dart';

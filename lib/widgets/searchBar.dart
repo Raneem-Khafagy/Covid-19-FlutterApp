@@ -44,8 +44,16 @@ class _SearchBarState extends State<SearchBar> {
             width: width * .84,
             height: .1 * height,
             decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(height * .02)),
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(height * .02),
+              boxShadow: [
+                BoxShadow(
+                  offset: Offset(0, 8),
+                  blurRadius: 24,
+                  color: shadowColor,
+                ),
+              ],
+            ),
             child: Center(
               child: TextField(
                 controller: myController,
@@ -64,7 +72,12 @@ class _SearchBarState extends State<SearchBar> {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                CardFutureBuilder(country: myController.text)),
+                                //capitalize first letter
+                                //match Api format
+                                CardFutureBuilder(
+                                    country:
+                                        myController.text[0].toUpperCase() +
+                                            myController.text.substring(1))),
                       );
                     },
                     child: Icon(

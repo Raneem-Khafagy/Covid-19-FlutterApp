@@ -1,4 +1,3 @@
-import 'package:covid/Views/Screens/EnterScreen.dart';
 import 'package:flutter/material.dart';
 
 import '../Constants.dart';
@@ -28,14 +27,17 @@ class _MyHeaderState extends State<MyHeader> {
     return ClipPath(
       clipper: MyClipper(),
       child: Container(
-        padding: EdgeInsets.only(left: 40, top: 50, right: 20),
-        height: 350,
+        padding: EdgeInsets.only(
+          left: width * 0.1,
+          top: height * 0.06,
+          right: width * 0.05,
+        ),
+        height: height * 0.45,
         width: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
-            // colors: colors.map<Color>((Color color) => Color.lerp(null, color, factor)!).toList()
             colors: [
               bgColor,
               wColor,
@@ -50,41 +52,20 @@ class _MyHeaderState extends State<MyHeader> {
           children: <Widget>[
             GestureDetector(
               onTap: () {
-                Navigator.push(
+                Navigator.pop(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return EnterScreen();
-                    },
-                  ),
                 );
               },
               child: Icon(Icons.keyboard_return),
             ),
-            SizedBox(height: 20),
-            Expanded(
-              child: Stack(
-                children: <Widget>[
-                  Positioned(
-                    top: (height < 0) ? 0 : height,
-                    child: Image.asset(
-                      widget.image,
-                      width: 230,
-                      fit: BoxFit.fitWidth,
-                      alignment: Alignment.topCenter,
-                    ),
-                  ),
-                  Positioned(
-                    top: 20 - height * 0.4,
-                    left: 150,
-                    child: Text(
-                      "${widget.textTop} \n${widget.textBottom}",
-                      style: kTitleTextstyle.copyWith(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  Container(), // I dont know why it can't work without container
+            SizedBox(height: height * .2),
+            Positioned(
+              top: height * 0.2,
+              right: width * .5,
+              child: Column(
+                children: [
+                  Text(widget.textTop, style: kHeadingTextStyle),
+                  Text(widget.textBottom, style: kHeadingTextStyle),
                 ],
               ),
             ),
