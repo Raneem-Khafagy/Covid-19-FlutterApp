@@ -38,7 +38,7 @@ class _MyHeaderState extends State<MyHeader> {
             // colors: colors.map<Color>((Color color) => Color.lerp(null, color, factor)!).toList()
             colors: [
               bgColor,
-              secColor,
+              wColor,
             ],
           ),
           image: DecorationImage(
@@ -75,7 +75,7 @@ class _MyHeaderState extends State<MyHeader> {
                     ),
                   ),
                   Positioned(
-                    top: 20 - height * 0.35,
+                    top: 20 - height * 0.4,
                     left: 150,
                     child: Text(
                       "${widget.textTop} \n${widget.textBottom}",
