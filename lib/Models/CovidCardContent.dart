@@ -32,7 +32,7 @@ var symotoms = PageContent(
       SubContent(
         titleSubContent: 'High Fever',
         detailsSubContent:
-            'People who are older with edical conditions such as heart or lung desease..',
+            'People who are older with edical conditions such as heart or lung desease.',
         imagePathSubContent: 'assets/images/symptoms/HighFever.png',
       ),
       SubContent(

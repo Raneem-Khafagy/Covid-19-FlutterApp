@@ -18,6 +18,7 @@ class EnterScreen extends StatelessWidget {
               width: width,
               height: height,
               child: Image(
+                fit: BoxFit.cover,
                 image: AssetImage("assets/images/bg.png"),
               )),
           Positioned(
@@ -26,7 +27,9 @@ class EnterScreen extends StatelessWidget {
             top: height * 0.2,
             child: Container(
               child: Image(
-                image: AssetImage("assets/images/homeScreen.png"),
+                image: AssetImage(
+                  "assets/images/homeScreen.png",
+                ),
               ),
             ),
           ),

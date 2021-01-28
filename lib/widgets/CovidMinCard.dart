@@ -39,26 +39,30 @@ class CovidMiniCard extends StatelessWidget {
           ),
           child: Container(
             width: width,
-            padding: const EdgeInsets.symmetric(horizontal: 8),
             child: Column(
               children: [
                 Container(
+                  width: width,
                   child: Image(
                     image: AssetImage(imagePathSubContent),
                     fit: BoxFit.scaleDown,
                   ),
                 ),
-                SizedBox(
-                  height: height * .009,
+                Container(
+                  width: width,
+                  child: Text(
+                    titleSubContent,
+                    style: covidHTextStyle,
+                    textAlign: TextAlign.center,
+                  ),
                 ),
-                Text(
-                  titleSubContent,
-                  style: covidHTextStyle,
-                ),
-                Text(
-                  detailsSubContent,
-                  style: subTextStyle,
-                  textAlign: TextAlign.center,
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  child: Text(
+                    detailsSubContent,
+                    style: subTextStyle,
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ],
             ),

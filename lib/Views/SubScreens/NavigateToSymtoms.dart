@@ -14,6 +14,7 @@ class NavigateToSymtoms extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
+            fit: BoxFit.cover,
             image: AssetImage("assets/images/bg.png"),
           ),
         ),
