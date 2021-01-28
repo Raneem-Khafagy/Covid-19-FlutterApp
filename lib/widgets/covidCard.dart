@@ -1,8 +1,9 @@
+import 'package:covid/Views/SubScreens/Covid19MiniCards.dart';
 import 'package:flutter/material.dart';
 
 import '../Constants.dart';
 
-class CovidCard extends StatelessWidget {
+class CovidCard extends StatefulWidget {
   final String image;
   final String title;
   final String text;
@@ -13,6 +14,11 @@ class CovidCard extends StatelessWidget {
     this.text,
   }) : super(key: key);
 
+  @override
+  _CovidCardState createState() => _CovidCardState();
+}
+
+class _CovidCardState extends State<CovidCard> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -40,24 +46,24 @@ class CovidCard extends StatelessWidget {
                 ],
               ),
             ),
-            Image.asset(image),
+            Image.asset(widget.image),
             Positioned(
               left: width * .3,
               child: Container(
-                padding: EdgeInsets.symmetric(
-                    horizontal: width * .04, vertical: height * .02),
+                padding: EdgeInsets.fromLTRB(
+                    width * .04, height * .02, width * .04, 0),
                 height: height * .2,
                 width: MediaQuery.of(context).size.width - width * 0.35,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text(title, style: lighterTextStyle),
+                    Text(widget.title, style: lighterTextStyle),
                     SizedBox(
                       height: height * .01,
                     ),
                     Expanded(
-                      child: Text(text,
+                      child: Text(widget.text,
                           maxLines: 4,
                           overflow: TextOverflow.ellipsis,
                           style: lightTextStyle),
@@ -65,8 +71,21 @@ class CovidCard extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Icon(
-                          Icons.arrow_forward,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Covid19MiniCards()),
+                            );
+                          },
+                          child: Container(
+                            color: Colors.yellow.shade600,
+                            padding: const EdgeInsets.all(8),
+                            child: Icon(
+                              Icons.arrow_forward,
+                            ),
+                          ),
                         ),
                       ],
                     ),

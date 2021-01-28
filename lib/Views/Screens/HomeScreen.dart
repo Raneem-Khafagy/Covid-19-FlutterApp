@@ -4,8 +4,6 @@ import 'package:covid/widgets/searchBar.dart';
 import 'package:flutter/material.dart';
 import 'package:covid/widgets/header.dart';
 
-import '../../Constants.dart';
-
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);
 
@@ -16,8 +14,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(

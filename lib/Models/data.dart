@@ -1,5 +1,5 @@
 import 'dart:convert' as convert;
-import 'package:intl/intl.dart';
+
 import 'package:covid/widgets/flipCard.dart';
 import 'package:covid/widgets/header.dart';
 
