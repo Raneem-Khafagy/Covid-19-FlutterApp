@@ -4,7 +4,7 @@ import '../Constants.dart';
 
 class MyHeader extends StatelessWidget {
   final String image;
-  final String secimage;
+
   final String textTop;
   final String textBottom;
   final String date;
@@ -12,7 +12,6 @@ class MyHeader extends StatelessWidget {
   const MyHeader({
     Key key,
     this.image,
-    this.secimage,
     this.textTop,
     this.textBottom,
     this.date,

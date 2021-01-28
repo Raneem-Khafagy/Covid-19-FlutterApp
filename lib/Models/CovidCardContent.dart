@@ -59,12 +59,6 @@ var symotoms = PageContent(
             'A runny nose is not a reason to get tested for coronavirus, says NHS Scotland.',
         imagePathSubContent: 'assets/images/symptoms/RunnyNose.png',
       ),
-      SubContent(
-        titleSubContent: 'Trouble Breathing',
-        detailsSubContent:
-            'Breathlessness is a common symptom of COVID-19. Some people describe it as feeling ‘short of breath’ or ‘winded’.',
-        imagePathSubContent: 'assets/images/symptoms/troubleBreathing.png',
-      )
     ]);
 
 var prevention = PageContent(

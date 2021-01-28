@@ -22,7 +22,6 @@ class _HomeScreenState extends State<HomeScreen> {
           children: <Widget>[
             MyHeader(
               image: "assets/images/homeScreen.png",
-              secimage: "assets/images/virus.png",
               textTop: "Get to know",
               textBottom: "About Covid-19.",
             ),

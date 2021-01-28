@@ -79,13 +79,6 @@ class NavigateToSymtoms extends StatelessWidget {
                   height: height,
                   width: width,
                 ),
-                CovidMiniCard(
-                  titleSubContent: symotoms.content[5].titleSubContent,
-                  detailsSubContent: symotoms.content[5].detailsSubContent,
-                  imagePathSubContent: symotoms.content[5].imagePathSubContent,
-                  height: height,
-                  width: width,
-                ),
               ],
             ),
           ],
