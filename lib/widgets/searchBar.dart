@@ -1,7 +1,4 @@
-import 'dart:io';
-
-import 'package:covid/Models/data.dart';
-
+import 'package:covid/Views/SubScreens/CardFutureBuilder.dart';
 import 'package:flutter/material.dart';
 
 import '../Constants.dart';
@@ -26,11 +23,6 @@ class _SearchBarState extends State<SearchBar> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-
-    // void dispose() {
-    //   // Clean up the controller when the widget is disposed.
-    //   myController.dispose();
-    // }
 
     return Container(
       padding: EdgeInsets.only(left: width * .08, right: width * .08),

@@ -21,6 +21,10 @@ const headingTextStyle = TextStyle(
   fontSize: 22,
   fontWeight: FontWeight.w600,
 );
+const covidHTextStyle = TextStyle(
+  fontSize: 22,
+  fontWeight: FontWeight.w300,
+);
 const covidTextStyle = TextStyle(
   fontSize: 30,
   fontWeight: FontWeight.w400,

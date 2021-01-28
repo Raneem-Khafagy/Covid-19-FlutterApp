@@ -1,4 +1,3 @@
-import 'package:covid/Views/SubScreens/Covid19MiniCards.dart';
 import 'package:flutter/material.dart';
 
 import '../Constants.dart';
@@ -7,11 +6,13 @@ class CovidCard extends StatefulWidget {
   final String image;
   final String title;
   final String text;
+  final Function navigateToRoute;
   const CovidCard({
     Key key,
     this.image,
     this.title,
     this.text,
+    this.navigateToRoute,
   }) : super(key: key);
 
   @override
@@ -25,7 +26,7 @@ class _CovidCardState extends State<CovidCard> {
     double height = MediaQuery.of(context).size.height;
     return Container(
       margin: EdgeInsets.fromLTRB(
-          height * .009, width * .09, height * .009, width * .09),
+          width * .04, height * .009, width * .04, height * .009),
       child: SizedBox(
         height: height * .28,
         child: Stack(
@@ -46,9 +47,15 @@ class _CovidCardState extends State<CovidCard> {
                 ],
               ),
             ),
-            Image.asset(widget.image),
+            Container(
+              width: width * .3,
+              height: height * .3,
+              child: Image(
+                image: AssetImage(widget.image),
+              ),
+            ),
             Positioned(
-              left: width * .3,
+              left: width * .28,
               child: Container(
                 padding: EdgeInsets.fromLTRB(
                     width * .04, height * .02, width * .04, 0),
@@ -72,15 +79,8 @@ class _CovidCardState extends State<CovidCard> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Covid19MiniCards()),
-                            );
-                          },
+                          onTap: widget.navigateToRoute,
                           child: Container(
-                            color: Colors.yellow.shade600,
                             padding: const EdgeInsets.all(8),
                             child: Icon(
                               Icons.arrow_forward,

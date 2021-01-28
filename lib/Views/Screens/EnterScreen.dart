@@ -15,26 +15,18 @@ class EnterScreen extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           Container(
-            width: width,
-            height: height,
-            child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/images/bg.png"),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ),
+              width: width,
+              height: height,
+              child: Image(
+                image: AssetImage("assets/images/bg.png"),
+              )),
           Positioned(
             width: width,
-            height: height * .5,
+            height: height * .55,
             top: height * 0.2,
             child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/images/homeScreen.png"),
-                ),
+              child: Image(
+                image: AssetImage("assets/images/homeScreen.png"),
               ),
             ),
           ),

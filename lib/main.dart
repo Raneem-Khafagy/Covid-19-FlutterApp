@@ -14,7 +14,6 @@ class Covid extends StatelessWidget {
       routes: {
         '/EnterScreen': (context) => EnterScreen(),
         '/HomeScreen': (context) => HomeScreen(),
-        //'/HomeScreen': (context) => SearchBarDemoHome(),
       },
       home: EnterScreen(),
     );
