@@ -24,15 +24,21 @@ class _HomeScreenState extends State<HomeScreen> {
           children: <Widget>[
             MyHeader(
               image: "assets/images/homeScreen.png",
+              secimage: "assets/images/virus.png",
               textTop: "Get to know",
               textBottom: "About Covid-19.",
             ),
             SearchBar(),
             CovidCard(
+              text: "COVID-19 affects different people in different ways.",
+              image: "assets/images/symptoms.png",
+              title: "symptoms",
+            ),
+            CovidCard(
               text:
-                  "Since the start of the coronavirus outbreak some places have fully embraced wearing facemasks",
-              image: "assets/images/homeScreen.png",
-              title: "Wear face mask",
+                  "Protect yourself and others around you by taking appropriate precautions.",
+              image: "assets/images/prevention.png",
+              title: "prevention",
             ),
           ],
         ),

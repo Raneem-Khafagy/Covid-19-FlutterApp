@@ -1,4 +1,3 @@
-import 'package:covid/widgets/searchBar.dart';
 import 'package:flutter/material.dart';
 //screens
 import 'Views/Screens/EnterScreen.dart';

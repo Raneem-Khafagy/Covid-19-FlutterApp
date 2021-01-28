@@ -27,10 +27,10 @@ class _SearchBarState extends State<SearchBar> {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
 
-    void dispose() {
-      // Clean up the controller when the widget is disposed.
-      myController.dispose();
-    }
+    // void dispose() {
+    //   // Clean up the controller when the widget is disposed.
+    //   myController.dispose();
+    // }
 
     return Container(
       padding: EdgeInsets.only(left: width * .08, right: width * .08),
@@ -56,6 +56,18 @@ class _SearchBarState extends State<SearchBar> {
             ),
             child: Center(
               child: TextField(
+                onSubmitted: (value) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            //capitalize first letter
+                            //match Api format
+                            CardFutureBuilder(
+                                country: myController.text[0].toUpperCase() +
+                                    myController.text.substring(1))),
+                  );
+                },
                 controller: myController,
                 cursorColor: Colors.black87,
                 decoration: InputDecoration(
@@ -66,24 +78,9 @@ class _SearchBarState extends State<SearchBar> {
                   disabledBorder: InputBorder.none,
                   contentPadding:
                       EdgeInsets.only(left: 15, bottom: 11, top: 11, right: 15),
-                  icon: GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                //capitalize first letter
-                                //match Api format
-                                CardFutureBuilder(
-                                    country:
-                                        myController.text[0].toUpperCase() +
-                                            myController.text.substring(1))),
-                      );
-                    },
-                    child: Icon(
-                      Icons.search,
-                      color: Colors.black87,
-                    ),
+                  icon: Icon(
+                    Icons.search,
+                    color: Colors.black87,
                   ),
                   hintText: 'Enter your country',
                 ),

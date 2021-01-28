@@ -21,12 +21,12 @@ class CovidCard extends StatelessWidget {
       margin: EdgeInsets.fromLTRB(
           height * .009, width * .09, height * .009, width * .09),
       child: SizedBox(
-        height: 156,
+        height: height * .28,
         child: Stack(
           alignment: Alignment.centerLeft,
           children: <Widget>[
             Container(
-              height: 136,
+              height: height * .2,
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
@@ -42,34 +42,34 @@ class CovidCard extends StatelessWidget {
             ),
             Image.asset(image),
             Positioned(
-              left: 130,
+              left: width * .3,
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                height: 136,
-                width: MediaQuery.of(context).size.width - 170,
+                padding: EdgeInsets.symmetric(
+                    horizontal: width * .04, vertical: height * .02),
+                height: height * .2,
+                width: MediaQuery.of(context).size.width - width * 0.35,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text(
-                      title,
-                      style: kTitleTextstyle.copyWith(
-                        fontSize: 16,
-                      ),
+                    Text(title, style: lighterTextStyle),
+                    SizedBox(
+                      height: height * .01,
                     ),
                     Expanded(
-                      child: Text(
-                        text,
-                        maxLines: 4,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontSize: 12,
-                        ),
-                      ),
+                      child: Text(text,
+                          maxLines: 4,
+                          overflow: TextOverflow.ellipsis,
+                          style: lightTextStyle),
                     ),
-                    Align(
-                        alignment: Alignment.topRight,
-                        child: Icon(Icons.forward)),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Icon(
+                          Icons.arrow_forward,
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),

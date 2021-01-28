@@ -15,14 +15,18 @@ const titleTextColor = Color(0xFF303030);
 final shadowColor = Color(0xFFB7B7B7).withOpacity(.16);
 
 // Text Style
-const kHeadingTextStyle = TextStyle(
+const headingTextStyle = TextStyle(
   fontSize: 22,
   fontWeight: FontWeight.w600,
 );
+const lighterTextStyle =
+    TextStyle(fontSize: 16, fontWeight: FontWeight.w300, color: Colors.black87);
+const lightTextStyle =
+    TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.black87);
 
-const kSubTextStyle = TextStyle(fontSize: 16, color: secColor);
+const subTextStyle = TextStyle(fontSize: 16, color: secColor);
 
-const kTitleTextstyle = TextStyle(
+const titleTextstyle = TextStyle(
   fontSize: 18,
   color: wColor,
   fontWeight: FontWeight.bold,

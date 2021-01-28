@@ -2,24 +2,22 @@ import 'package:flutter/material.dart';
 
 import '../Constants.dart';
 
-class MyHeader extends StatefulWidget {
+class MyHeader extends StatelessWidget {
   final String image;
+  final String secimage;
   final String textTop;
   final String textBottom;
+  final String date;
   //final double offset;
   const MyHeader({
     Key key,
     this.image,
+    this.secimage,
     this.textTop,
     this.textBottom,
-    /*this.offset*/
+    this.date,
   }) : super(key: key);
 
-  @override
-  _MyHeaderState createState() => _MyHeaderState();
-}
-
-class _MyHeaderState extends State<MyHeader> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -44,11 +42,11 @@ class _MyHeaderState extends State<MyHeader> {
             ],
           ),
           image: DecorationImage(
+            scale: 6,
             image: AssetImage("assets/images/homeScreen.png"),
           ),
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
             GestureDetector(
               onTap: () {
@@ -56,18 +54,27 @@ class _MyHeaderState extends State<MyHeader> {
                   context,
                 );
               },
-              child: Icon(Icons.keyboard_return),
-            ),
-            SizedBox(height: height * .2),
-            Positioned(
-              top: height * 0.2,
-              right: width * .5,
-              child: Column(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text(widget.textTop, style: kHeadingTextStyle),
-                  Text(widget.textBottom, style: kHeadingTextStyle),
+                  Icon(Icons.keyboard_return),
                 ],
               ),
+            ),
+            SizedBox(height: height * .19),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(textTop, style: headingTextStyle),
+                    date == null
+                        ? Text(textBottom, style: headingTextStyle)
+                        : Text(date, style: lightTextStyle),
+                  ],
+                ),
+              ],
             ),
           ],
         ),

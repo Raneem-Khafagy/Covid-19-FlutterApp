@@ -1,5 +1,5 @@
 import 'dart:convert' as convert;
-
+import 'package:intl/intl.dart';
 import 'package:covid/widgets/flipCard.dart';
 import 'package:covid/widgets/header.dart';
 
@@ -70,7 +70,7 @@ class CardFutureBuilder extends StatelessWidget {
                 MyHeader(
                   image: "assets/images/homeScreen.png",
                   textTop: "Case Update",
-                  textBottom: snapshot.data['day'].toString(),
+                  date: snapshot.data['day'].toString(),
                 ),
                 Container(
                   height: height * .55,
