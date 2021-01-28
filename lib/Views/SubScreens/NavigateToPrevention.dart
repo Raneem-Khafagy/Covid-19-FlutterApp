@@ -49,48 +49,36 @@ class NavigateToPrevention extends StatelessWidget {
                   detailsSubContent: prevention.content[0].detailsSubContent,
                   imagePathSubContent:
                       prevention.content[0].imagePathSubContent,
-                  height: height,
-                  width: width,
                 ),
                 CovidMiniCard(
                   titleSubContent: prevention.content[1].titleSubContent,
                   detailsSubContent: prevention.content[1].detailsSubContent,
                   imagePathSubContent:
                       prevention.content[1].imagePathSubContent,
-                  height: height,
-                  width: width,
                 ),
                 CovidMiniCard(
                   titleSubContent: prevention.content[2].titleSubContent,
                   detailsSubContent: prevention.content[2].detailsSubContent,
                   imagePathSubContent:
                       prevention.content[2].imagePathSubContent,
-                  height: height,
-                  width: width,
                 ),
                 CovidMiniCard(
                   titleSubContent: prevention.content[3].titleSubContent,
                   detailsSubContent: prevention.content[3].detailsSubContent,
                   imagePathSubContent:
                       prevention.content[3].imagePathSubContent,
-                  height: height,
-                  width: width,
                 ),
                 CovidMiniCard(
                   titleSubContent: prevention.content[4].titleSubContent,
                   detailsSubContent: prevention.content[4].detailsSubContent,
                   imagePathSubContent:
                       prevention.content[4].imagePathSubContent,
-                  height: height,
-                  width: width,
                 ),
                 CovidMiniCard(
                   titleSubContent: prevention.content[5].titleSubContent,
                   detailsSubContent: prevention.content[5].detailsSubContent,
                   imagePathSubContent:
                       prevention.content[5].imagePathSubContent,
-                  height: height,
-                  width: width,
                 ),
               ],
             ),

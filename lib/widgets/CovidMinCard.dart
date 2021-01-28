@@ -5,21 +5,19 @@ import '../Constants.dart';
 class CovidMiniCard extends StatelessWidget {
   const CovidMiniCard({
     Key key,
-    @required this.height,
-    @required this.width,
     this.titleSubContent,
     this.detailsSubContent,
     this.imagePathSubContent,
   }) : super(key: key);
 
-  final double height;
-  final double width;
   //cards content
   final String titleSubContent;
   final String detailsSubContent;
   final String imagePathSubContent;
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Stack(
       children: [
         Container(
@@ -44,8 +42,14 @@ class CovidMiniCard extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 8),
             child: Column(
               children: [
+                Container(
+                  child: Image(
+                    image: AssetImage(imagePathSubContent),
+                    fit: BoxFit.scaleDown,
+                  ),
+                ),
                 SizedBox(
-                  height: height * .28,
+                  height: height * .009,
                 ),
                 Text(
                   titleSubContent,
@@ -58,12 +62,6 @@ class CovidMiniCard extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-        ),
-        Container(
-          child: Image(
-            image: AssetImage(imagePathSubContent),
-            fit: BoxFit.scaleDown,
           ),
         ),
       ],

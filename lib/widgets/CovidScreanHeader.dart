@@ -50,7 +50,7 @@ class CovidMiniCardHeader extends StatelessWidget {
               Text(heading1, style: lightCovidTextStyle),
               Text(heading2, style: covidTextStyle),
               Container(
-                  width: width * .55,
+                  width: width * .59,
                   child: Text(heading3, style: subTextStyle)),
             ],
           ),
