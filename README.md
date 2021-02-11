@@ -1,4 +1,4 @@
-<h1 align='center'> COVID-19 </h1>
+#COVID-19
 
 A Flutter application to track covid-19 cases around the world.
 
