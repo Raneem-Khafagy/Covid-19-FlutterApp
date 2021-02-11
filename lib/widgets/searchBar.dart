@@ -52,12 +52,13 @@ class _SearchBarState extends State<SearchBar> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) =>
-                            //capitalize first letter
-                            //match Api format
-                            CardFutureBuilder(
-                                country: myController.text[0].toUpperCase() +
-                                    myController.text.substring(1))),
+                      builder: (context) =>
+                          //match Api format -Aaaaa
+                          CardFutureBuilder(
+                        country: myController.text[0].toUpperCase() +
+                            myController.text.substring(1).toLowerCase(),
+                      ),
+                    ),
                   );
                 },
                 controller: myController,
