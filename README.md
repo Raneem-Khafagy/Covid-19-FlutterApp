@@ -4,7 +4,7 @@ A Flutter application to track covid-19 cases around the world.
 
 # Demo
 <p align='center'>
-<img height="480px" src="https://github.com/Raneem-Khafagy/Covid-19-FlutterApp-/blob/main/assets/video/covid-19.mp4">
+<img  src="assets/gif/covid-19.gif">
 </p>
 
 * Technology/Packages used 
